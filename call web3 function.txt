@@ -1,0 +1,9 @@
+1. node
+
+2. var Web3 = require('web3')
+
+3. var web3 = new Web3('http://localhost:7545') // connect to ganache
+
+4. web3.eth.getBalance('0xEd86D2C87a42Bf3031aBB85b210a9946b82E8B94', (err, bal) => {balance = bal}) // get balance of account on ganache network
+
+5. web3.utils.fromWei(balance, 'ether') // convert wei to ether using utils package.
