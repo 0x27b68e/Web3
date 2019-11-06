@@ -7,3 +7,25 @@
 4. web3.eth.getBalance('0xEd86D2C87a42Bf3031aBB85b210a9946b82E8B94', (err, bal) => {balance = bal}) // get balance of account on ganache network
 
 5. web3.utils.fromWei(balance, 'ether') // convert wei to ether using utils package.
+
+--------------
+
+how to call functions of token on the ethereum network
+
+1. Look a tokens for example: OMG, https://etherscan.io/token/0xd26114cd6EE289AccF82350c8d8487fedB8A0C07
+
+2. set up variables:
+	
+  - var url = 'https://mainnet.infura.io/v3/8804c9fca4684fd58cc9c20a833e480b'
+  - var Web3 = require('web3')
+  - var web3 = new Web3(url)
+  - var contractAddress = '0xd26114cd6EE289AccF82350c8d8487fedB8A0C07'
+  - copy abi from 'https://etherscan.io/address/0xd26114cd6EE289AccF82350c8d8487fedB8A0C07#code' , node: do not have '' character
+  - var contract = new web3.eth.Contract(abi, contractAddress)
+
+3. get all methods:
+	
+- contract.methods
+- get name() method: contract.methods.name().call((err, result)=>{console.log(result)})
+- check mintingFinished:contract.methods.mintingFinished().call((err, result)=>{console.log(result)})
+  
