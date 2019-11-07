@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/0x27b68e/Web3#readme",
   "dependencies": {
+    "ethereumjs-tx": "^2.1.1",
     "web3": "^1.2.2"
   }
 }

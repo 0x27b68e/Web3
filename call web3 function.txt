@@ -28,4 +28,7 @@ how to call functions of token on the ethereum network
 - contract.methods
 - get name() method: contract.methods.name().call((err, result)=>{console.log(result)})
 - check mintingFinished:contract.methods.mintingFinished().call((err, result)=>{console.log(result)})
+
+-----------------------------------
+
   
