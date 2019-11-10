@@ -1,1 +1,7 @@
-web3.eth.sendTransaction({from: account1, to: account2, value: 100000})
+1. node
+2. const Web3 = require('web3')
+3. const web3 = new Web3('http://localhost:7545')
+4. const account1 = '0xEd86D2C87a42Bf3031aBB85b210a9946b82E8B94'
+5. const account2 = '0xbF6AaD669Dc721196b1BdA011d524c2374D6aB3b';
+6. web3.eth.sendTransaction({from: account1, to: account2, value: web3.utils.toWei('1', 'ether')})
+7. check balance: web3.eth.getBalance(account1, (err, result)=> {console.log(result)})
