@@ -1,0 +1,4 @@
+1. create account
+web3.eth.accounts.create()
+
+1.web3.eth.personal.unlockAccount()
