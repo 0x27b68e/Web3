@@ -13,7 +13,7 @@ console.log('connect');
 //getTransactionCount
 web3.eth.getTransactionCount(account1, (err, txCount)=> {
     console.log(txCount);
-    // build the transaction
+    // create the transaction object
     const txObject = {
         nonce: web3.utils.toHex(txCount),// safeguard that prevents double spend problem
         to: account2,
@@ -22,14 +22,15 @@ web3.eth.getTransactionCount(account1, (err, txCount)=> {
         gasPrice: web3.utils.toHex(web3.utils.toWei('10', 'gwei'))
     }
     const tx = new Tx(txObject,{'chain':'ropsten'})
-    // Sign the transaction
+
+    //sign the transaction with private key
     tx.sign(privateKey1);
     console.log(tx)
     const serializedTx = tx.serialize();
     
-    //Broadcash the transaction
-    web3.eth.sendSignedTransaction('0x' + serializedTx.toString('hex')).on('receipt', (err, result)=>{
-        console.log(result);
+    //broadcash the transaction to the ropsten network
+    web3.eth.sendSignedTransaction('0x' + serializedTx.toString('hex')).on('receipt', (err, txHash)=>{
+        console.log(txHash); // use this hash to find the transaction on Etherescan
     })
 });
 

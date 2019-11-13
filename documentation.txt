@@ -6,8 +6,6 @@
 3. Open PowerShell with admin and install two command
 
 'npm install --global --production windows-build-tools --vs2015
- npm config set msvs_version 2015 –global'
+ npm config set msvs_version 2015 ï¿½global'
 
 4. 'npm install web3' =>done
-
-5. var Web3 = require('web3');

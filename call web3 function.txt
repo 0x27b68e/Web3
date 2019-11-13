@@ -1,4 +1,4 @@
-1. node
+1. node (go to node console)
 
 2. var Web3 = require('web3')
 
