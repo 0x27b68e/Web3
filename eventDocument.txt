@@ -1,0 +1,4 @@
+Smart contract on ethereum blockchain can emit events. It can emit a signal that something happened inside the 
+smart constract and  it can broadcast the event to the entire network and a consumer can subscribe to that event
+to find out that something happened with a smart contract.
+
